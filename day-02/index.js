@@ -28,11 +28,13 @@ function isSafe(report) {
 }
 
 reports.forEach((report) => {
+  // part one
   if (isSafe(report)) {
     safeReports++;
     return;
   }
 
+  // part two
   for (let i = 0; i < report.length; i++) {
     const newReport = [...report.slice(0, i), ...report.slice(i + 1)];
 
@@ -42,9 +44,3 @@ reports.forEach((report) => {
     }
   }
 });
-
-console.log(safeReports);
-
-const array = [1, 2, 3, 4, 5, 6];
-array.splice(0, 3);
-console.log(array);
